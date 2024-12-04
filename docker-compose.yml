@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres:16.4
+    environment:
+      - POSTGRES_DB=recepies
+      - POSTGRES_USER=test_jsonb
+      - POSTGRES_PASSWORD=test_jsonb_pass
+    ports:
+      - 5433:5432
