@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 public class RecepieController {
 
-    private RecepieService recepieService;
+    private final RecepieService recepieService;
 
     public RecepieController(RecepieService recepieService) {
         this.recepieService = recepieService;

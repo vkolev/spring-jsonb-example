@@ -14,7 +14,7 @@ public interface RecepieRepository extends JpaRepository<Recepie, Long> {
     SELECT * FROM recepies WHERE jsonb_path_exists(topping, ('$[*] ? (@.type == "'|| :name ||'")')::jsonpath) IS true""", nativeQuery = true)
     List<Recepie> findWithToppings(@Param("name") String name);
 
-    @Query(value = """
-    SELECT * FROM recepies WHERE jsonb_path_exists(topping, ('$[*] ? (@.type like_regex "^'|| :name ||'$" flag "i")')::jsonpath) IS true""", nativeQuery = true)
-    List<Recepie> findWithToppingsInsensitive(@Param("name") String name);
+//    @Query(value = """
+//    SELECT * FROM recepies WHERE jsonb_path_exists(topping, ('$[*] ? (@.type like_regex "^'|| :name ||'$" flag "i")')::jsonpath) IS true""", nativeQuery = true)
+//    List<Recepie> findWithToppingsInsensitive(@Param("name") String name);
 }
